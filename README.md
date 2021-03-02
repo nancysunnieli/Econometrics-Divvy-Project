@@ -6,7 +6,7 @@ Datasets: <br />
 1.) Divvy Data By Date and origin.dta (provided by professor. This is Divvy data from June 27, 2013 to December 31, 2019)<br />
 2.) Divvy data by date.dta (provided by professor. This is Divvy data from June 27, 2013 to December 31, 2019) <br />
 3.) raw_weather_data.dta (this is the raw weather data acquired from NOAA) <br />
-4.) raw_weather_data.csv (this is the same data as raw_weather_data.dta, except it is in csv format)
+4.) raw_weather_data.csv (this is the same data as raw_weather_data.dta, except it is in csv format)<br />
 5.) cleaned-weather-data.dta (this is the cleaned weather data)<br />
 6.) DivvyDataEdited.dta (edited divvy data for analysis) <br />
 7.) merged_data.dta (this is the merged data we use for analysis. It merges cleaned-weather-data.dta and DivvyDataEdited.dta) <br />
