@@ -217,4 +217,4 @@ est sto B17
 
 // creating tables of the regressions we just ran
 est table A*, star b(%9.0fc)
-est table B*, star b(%9.0fc)
+est table B*, star b(%5.4fc)
