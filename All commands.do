@@ -24,6 +24,7 @@ replace num_month = 10 if month == "oct"
 replace num_month = 11 if month == "nov"
 replace num_month = 12 if month == "dec"
 
+
 gen day_temp = substr(date_temp, 1,2)
 gen day = real(day_temp)
 drop day_temp
@@ -102,7 +103,34 @@ drop new_date1
 gen day_of_week = dow(date_string)
 gen lntrips = ln(trips)
 
-save "merged_data.dta", replace
+// creating dummy variables for each month
+gen january = 0
+gen february = 0
+gen march = 0
+gen april = 0
+gen may = 0
+gen june = 0
+gen july = 0
+gen august = 0
+gen september = 0
+gen october = 0
+gen november = 0
+gen december = 0
+replace january = 1 if num_month == 1
+replace february = 1 if num_month == 2
+replace march = 1 if num_month == 3
+replace april = 1 if num_month == 4
+replace may = 1 if num_month == 5
+replace june = 1 if num_month == 6
+replace july = 1 if num_month == 7
+replace august = 1 if num_month == 8
+replace september = 1 if num_month == 9
+replace october = 1 if num_month == 10
+replace november = 1 if num_month == 11
+replace december = 1 if num_month == 12
+
+// save "merged_data.dta", replace
+save "/Users/nancyli/Desktop/ECON 11020 Final Project/merged_data.dta", replace
 
 // creating graph of trips and average temperature
 line trips temp_avg
@@ -142,25 +170,25 @@ est sto A9
 regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind
 est sto A10
 
-regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month
+regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december
 est sto A11
 
-regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day
+regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day
 est sto A12
 
-regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer
+regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer
 est sto A13
 
-regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer winter
+regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer winter
 est sto A14
 
-regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer winter spring
+regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer winter spring
 est sto A15
 
-regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer winter spring autumn
+regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer winter spring autumn
 est sto A16
 
-regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer winter spring autumn day_of_week
+regress trips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer winter spring autumn day_of_week
 est sto A17
 
 //
@@ -194,25 +222,25 @@ est sto B9
 regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind
 est sto B10
 
-regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month
+regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december
 est sto B11
 
-regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day
+regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day
 est sto B12
 
-regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer
+regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer
 est sto B13
 
-regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer winter
+regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer winter
 est sto B14
 
-regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer winter spring
+regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer winter spring
 est sto B15
 
-regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer winter spring autumn
+regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer winter spring autumn
 est sto B16
 
-regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind num_month day summer winter spring autumn day_of_week
+regress lntrips temp_avg snow_depth snow thunder prcp sleet hail rime smoke wind january february march april may june july august september october november december day summer winter spring autumn day_of_week
 est sto B17
 
 // creating tables of the regressions we just ran
