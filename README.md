@@ -17,3 +17,6 @@ Scripts: <br />
 3.) merging datasets (do file that merges cleaned-weather-data.dta and DivvyDataEdited.dta and creates merged_data.dta)<br />
 4.) running regressions (do file that runs the regressions using merged_data.dta)<br />
 5.) All commands (do file containing all of the above commands) <br />
+<br /><br />
+Graphics: <br />
+This directory includes all the images generated
