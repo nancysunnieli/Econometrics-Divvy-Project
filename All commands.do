@@ -133,8 +133,10 @@ replace december = 1 if num_month == 12
 save "/Users/nancyli/Desktop/ECON 11020 Final Project/merged_data.dta", replace
 
 // creating graph of trips and average temperature
-line trips temp_avg
-line lntrips temp_avg
+line trips temp_avg, title("Number of Trips to Avg. Temp")
+graph export trips_temp.jpg, replace
+line lntrips temp_avg, title("Natural Logarithm of the Number of Trips to Avg. Temp")
+graph export lntrips_temp.jpg, replace
 
 // running regressions
 use "/Users/nancyli/Desktop/ECON 11020 Final Project/merged_data.dta"
