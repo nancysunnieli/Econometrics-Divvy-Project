@@ -1,3 +1,4 @@
+// Cleaning the raw weather data, so that it can be used
 // This script cleans the weather data, as the raw data has gaps
 
 use "/Users/nancyli/Desktop/ECON 11020 Final Project/raw_weather_data.dta"

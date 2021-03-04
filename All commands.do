@@ -134,6 +134,7 @@ save "/Users/nancyli/Desktop/ECON 11020 Final Project/merged_data.dta", replace
 
 // creating graph of trips and average temperature
 line trips temp_avg
+line lntrips temp_avg
 
 // running regressions
 use "/Users/nancyli/Desktop/ECON 11020 Final Project/merged_data.dta"

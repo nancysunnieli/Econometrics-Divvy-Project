@@ -1,3 +1,4 @@
+// Changing the given divvy data to be able to use in project
 
 use "/Users/nancyli/Desktop/ECON 11020 Final Project/Divvy data by date and origin.dta"
 
@@ -23,6 +24,7 @@ replace num_month = 10 if month == "oct"
 replace num_month = 11 if month == "nov"
 replace num_month = 12 if month == "dec"
 
+
 gen day_temp = substr(date_temp, 1,2)
 gen day = real(day_temp)
 drop day_temp
@@ -42,3 +44,4 @@ gen autumn = 0
 replace autumn = 4 if month == "sep" | month == "oct" | month == "nov"
 
 save "DivvyDataEdited.dta", replace
+
