@@ -1,5 +1,5 @@
 # Econometrics-Divvy-Project
-In this project, we analyze the effect of change in temperature on the number of daily divvy rides using STATA
+In this project, I analyze the effect of change in temperature on the number of daily divvy rides using STATA. Paper and Code written by Nancy Li.
 <br /><br />
 # Decription of Files in Repository<br />
 Datasets: <br />
